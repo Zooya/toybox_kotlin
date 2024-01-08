@@ -3,6 +3,13 @@
  * play.kotlinlang.org
  */
 fun main() {
-    var n = 10_00
-    println("Hello, world!!!" + n)
+    var a = arrayOf(1,2,3,7)
+    var n = "こんにちは${a[3]}これが最初の文字${a.size}"
+    var n1 = """
+    	|こんにちは
+		|これが最初の文字
+        |なんですよ
+    """.trimMargin()
+    println(n)
+    println(n1)
 }
