@@ -1,4 +1,9 @@
 class Photo {
+    val fileName: String = "aaa"
+    var createdAt: Int = 345
+    	private set(value) {
+            field = value
+        }
     var imgName: String = "image.jpg"
   		set(value) {
             println("start set imgName")
@@ -13,6 +18,11 @@ class Photo {
         println("start setImageName")
         imgName = name + ".png"
     }
+   	
+    fun setCreate(a: Int) {
+        println("start setCreate")
+        createdAt = a
+    }
 }
 
 fun main() {
@@ -21,4 +31,10 @@ fun main() {
     photo.imgName = "image2"
     photo.setImageName("image3")
 	println(photo.imgName)
+    
+    println(photo.fileName)
+    
+    photo.setCreate(123)
+// 	photo.createdAt = 123
+    println(photo.createdAt)
 }
