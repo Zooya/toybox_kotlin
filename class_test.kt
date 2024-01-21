@@ -25,6 +25,13 @@ class Photo {
     }
 }
 
+class Tube(var name: String) {
+    fun printName() {
+        println("start printName")
+		println(this.name)        
+    }
+}
+
 fun main() {
     var photo = Photo()
     photo.getImageName()
@@ -37,4 +44,8 @@ fun main() {
     photo.setCreate(123)
 // 	photo.createdAt = 123
     println(photo.createdAt)
+
+    var tube = Tube("AAA")
+    println(tube.name)
+    tube.printName()
 }
