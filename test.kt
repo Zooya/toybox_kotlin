@@ -28,6 +28,6 @@ fun main() {
     val members = listOf("Tom", "Jerry" ,"Bob", "Olibia" )
     val numbers = listOf( 1, 3, 5, 7 )
 
-    readList( members, ::println)
+    readList( members, { member -> println(member)})
     readList( numbers, ::println)
 }
