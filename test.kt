@@ -2,11 +2,15 @@
  * You can edit, run, and share this code.
  * play.kotlinlang.org
  */
-
-
-fun <A>readList(members: List<A>) {
+fun <A>readList(members: List<A>, someFunction: (A) -> Unit ) {
   for( person in members ) {
-    println( person )
+    someFunction( person )
+  }
+}
+
+fun readList2(members: List<String>, someFunction: (String) -> Unit ) {
+  for( person in members ) {
+    someFunction( person )
   }
 }
 
@@ -24,6 +28,6 @@ fun main() {
     val members = listOf("Tom", "Jerry" ,"Bob", "Olibia" )
     val numbers = listOf( 1, 3, 5, 7 )
 
-    readList( members )
-    readList( numbers )
+    readList2( members, ::println)
+//     readList( numbers, ::println)
 }
