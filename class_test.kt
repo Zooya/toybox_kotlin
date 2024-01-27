@@ -1,4 +1,4 @@
-class Photo {
+open class Photo {
     val fileName: String = "aaa"
     var createdAt: Int = 345
     	private set(value) {
@@ -10,7 +10,7 @@ class Photo {
     		field = value + ".jpg"        
         }
 
-    fun getImageName() {
+    open fun getImageName() {
 		println(imgName)
 	}
     
@@ -25,6 +25,16 @@ class Photo {
     }
 }
 
+class JpegPhoto: Photo() {
+    fun create() {
+        println("create jpeg photo!")
+    }
+    
+    override fun getImageName() {
+		println(imgName + "!!!!")
+	}
+}
+
 class Tube(var name: String) {
     fun printName() {
         println("start printName")
@@ -33,7 +43,7 @@ class Tube(var name: String) {
 }
 
 fun main() {
-    var photo = Photo()
+    var photo = JpegPhoto()
     photo.getImageName()
     photo.imgName = "image2"
     photo.setImageName("image3")
