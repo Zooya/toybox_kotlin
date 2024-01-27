@@ -1,5 +1,9 @@
 interface Arrayalbe {
+    var a: String
     fun toArray()
+    fun toArray2() {
+        println(this.a)
+    }
 }
 
 interface Jsonable {
@@ -7,6 +11,7 @@ interface Jsonable {
 }
 
 class Collection: Arrayalbe, Jsonable {
+    override var a: String = "AAA"
     override fun toArray() {
         println("to array")
     }
@@ -18,6 +23,6 @@ class Collection: Arrayalbe, Jsonable {
 
 fun main() {
     var col = Collection()
-    col.toArray()
+    col.toArray2()
     col.toJson()
 }
