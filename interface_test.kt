@@ -19,6 +19,10 @@ class Collection: Arrayalbe, Jsonable {
     override fun toJson() {
         println("to json")
     }
+
+    fun add(var a: Int) {
+        println("add")
+    }
 }
 
 fun main() {
